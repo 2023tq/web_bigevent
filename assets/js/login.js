@@ -54,7 +54,10 @@ $(function () {
       method: 'POST',
       data: $(this).serialize(),
       success: function (res) {
-        layer.msg(res.message)
+
+        if (res.status !== 0) {
+          return layer.msg(res.message)
+        }
 
         localStorage.setItem('token', res.token)
 

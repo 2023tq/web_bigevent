@@ -21,6 +21,7 @@ $(function () {
 
 
 function getUserInfo() {
+
   $.ajax({
     url: '/my/userinfo',
 
@@ -50,7 +51,7 @@ function getUserInfo() {
 
 function render(data) {
 
-  const name = data.username || data.nickname
+  const name = data.nickname || data.username
 
   $('#welcome').html('欢迎 &nbsp;&nbsp;' + name)
 

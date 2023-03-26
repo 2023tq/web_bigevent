@@ -7,6 +7,11 @@ $.ajaxPrefilter(function (options) {
     }
   }
 
+  if (options.url.indexOf('article') !== -1) {
+    return
+  }
+
+
   options.complete = (res) => {
 
     if (res.responseJSON.status === 1) {
